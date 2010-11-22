@@ -308,13 +308,13 @@ function addthis_social_widget($content_orig, $onSidebar = false, $url = null, $
     // add nothing to RSS feed or search results; control adding to static/archive/category pages
     if (!$onSidebar) 
     {
-        if ($addthis_settings['sidebar_only'] == 'true') return $content;
-        else if (is_feed()) return $content;
-        else if (is_search()) return $content;
-        else if (is_home() && !$addthis_settings['showonhome']) return $content;
-        else if (is_page() && !$addthis_settings['showonpages']) return $content;
-        else if (is_archive() && !$addthis_settings['showonarchives']) return $content;
-        else if (is_category() && !$addthis_settings['showoncats']) return $content;
+        if ($addthis_settings['sidebar_only'] == 'true') return $content_orig;
+        else if (is_feed()) return $content_orig;
+        else if (is_search()) return $content_orig;
+        else if (is_home() && !$addthis_settings['showonhome']) return $content_orig;
+        else if (is_page() && !$addthis_settings['showonpages']) return $content_orig;
+        else if (is_archive() && !$addthis_settings['showonarchives']) return $content_orig;
+        else if (is_category() && !$addthis_settings['showoncats']) return $content_orig;
     }
 
     $pub = ($addthis_settings['username']);
