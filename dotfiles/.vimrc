@@ -6,7 +6,6 @@ call vundle#rc()
 "Vundle  
 Bundle 'taskpaper.vim'
 Bundle 'neocomplcache'
-Bundle 'yanktmp.vim'
 Bundle 'Shougo/vimfiler'
 Bundle 'Shougo/unite.vim'
 Bundle 'quickrun.vim'
@@ -21,6 +20,8 @@ set autoindent
 set fileencoding=cp932
 set fileencodings=iso-2022-jp,utf-8,cp932
 set helpheight=40
+set smartcase 
+set viminfo+=n$HOME/.vim/viminfo
 
 let mapleader = "\\"
 " setting for neocomplecache
@@ -38,17 +39,8 @@ highlight PmenuSel ctermbg=1
 " Quik vimrc edit 
 nnoremap <space>. :<C-u>tabnew $MYVIMRC<CR>
 nnoremap <space>s. :<C-u>source $MYVIMRC<CR>
-
 nnoremap <C-n> gt
 nnoremap <C-p> gT
-
-
-" yanktmp setting
-" map <silent> sy :call YanktmpYank()<cr>
-" map <silent> sp :call YanktmpPaste_p()<cr>
-" map <silent> sP :call YanktmpPaste_P()<cr> 
-" let g:yanktmp_file = $HOME .'/.vim/yanktmp'
-
 
 " vimfiler
 map <F2> <ESC>:VimFiler<RETURN>
