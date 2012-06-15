@@ -17,8 +17,9 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 set tabstop=4
 set number
 set autoindent
-set fileencoding=cp932
-set fileencodings=iso-2022-jp,utf-8,cp932
+"set encoding=utf-8
+"set fileencoding=utf8
+set fileencodings=cp932,utf8
 set helpheight=40
 set smartcase 
 set viminfo+=n$HOME/.vim/viminfo
