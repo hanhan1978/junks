@@ -17,11 +17,12 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 set tabstop=4
 set number
 set autoindent
-set fileencoding=cp932
+set fileencoding=utf-8
 set fileencodings=iso-2022-jp,utf-8,cp932
 set helpheight=40
 set smartcase 
 set viminfo+=n$HOME/.vim/viminfo
+set foldmethod=syntax
 
 let mapleader = "\\"
 " setting for neocomplecache
