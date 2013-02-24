@@ -17,7 +17,6 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 set tabstop=4
 set number
 set autoindent
-set fileencoding=utf-8
 set fileencodings=iso-2022-jp,utf-8,cp932
 set helpheight=40
 set smartcase 

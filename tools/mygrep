@@ -1,0 +1,3 @@
+#!/bin/bash
+
+grep -rin "`echo $1`" $2 | grep -v ".svn"
