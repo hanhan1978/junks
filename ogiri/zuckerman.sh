@@ -6,7 +6,7 @@ do
 
   if [ 0 -eq $product ] ; then
     continue;
-  elif [ 0 -eq `expr $num % $product` ] ; then
+  elif [ 0 -eq `echo $num $product % p | dc` ] ; then
     echo $num
   fi
 done;
