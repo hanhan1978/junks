@@ -19,12 +19,15 @@ set tabstop=4
 set expandtab
 set number
 set autoindent
-set fileencodings=iso-2022-jp,utf-8,cp932
+set fileencodings=utf-8,cp932,iso-2022-jp
 set helpheight=40
 set smartcase 
 set viminfo+=n$HOME/.vim/viminfo
 set foldmethod=syntax
-"set tags=.tags
+set tags=.tags
+
+syntax match Tab /\t/
+hi Tab gui=underline guifg=blue ctermbg=blue
 
 let mapleader = "\\"
 " setting for neocomplecache
@@ -79,7 +82,7 @@ function! s:twitvim_my_settings()
 endfunction
 
 "grep
-set grepprg=phpgrep
+set grepprg=grep
 autocmd QuickfixCmdPost make,grep,grepadd,vimgrep if len(getqflist()) != 0 | copen | endif
 
 filetype plugin on
