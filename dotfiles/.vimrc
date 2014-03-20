@@ -23,7 +23,7 @@ set fileencodings=utf-8,cp932,iso-2022-jp
 set helpheight=40
 set smartcase 
 set viminfo+=n$HOME/.vim/viminfo
-set foldmethod=syntax
+"set foldmethod=syntax
 set tags=.tags
 
 syntax match Tab /\t/
