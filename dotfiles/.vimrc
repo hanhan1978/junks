@@ -24,6 +24,7 @@ NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'w0ng/vim-hybrid'
+NeoBundle 'itchyny/lightline.vim'
 
 call neobundle#end()
 
@@ -77,5 +78,9 @@ let g:indentLine_color_term=238
 let g:quickrun_config = {}
 let g:quickrun_config['*'] = {'outputter/buffer/split': ':150vs'}
 nmap <space>r <Plug>(quickrun)
+
+
+" vim-lightline
+set laststatus=2
 
 colorscheme jellybeans
