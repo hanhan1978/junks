@@ -34,7 +34,7 @@ NeoBundleCheck
 
 
 " Quick vimrc edit 
-nnoremap <space>. :<C-u>tabnew $MYVIMRC<CR>
+nnoremap <space>. :<C-u>e $MYVIMRC<CR>
 nnoremap <space>s. :<C-u>source $MYVIMRC<CR>
 
 " Quick NERDTree call
