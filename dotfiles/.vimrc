@@ -25,6 +25,7 @@ NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'tpope/vim-fugitive'
 
 call neobundle#end()
 
@@ -80,7 +81,11 @@ let g:quickrun_config['*'] = {'outputter/buffer/split': ':150vs'}
 nmap <space>r <Plug>(quickrun)
 
 
-" vim-lightline
-set laststatus=2
+" lightline
+if filereadable(expand('$HOME/junk/dotfiles/.vimrc.lightline'))
+    set laststatus=2 
+    source $HOME/junk/dotfiles/.vimrc.lightline
+endif
+
 
 colorscheme jellybeans
