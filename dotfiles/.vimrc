@@ -39,7 +39,8 @@ nnoremap <space>. :<C-u>e $MYVIMRC<CR>
 nnoremap <space>s. :<C-u>source $MYVIMRC<CR>
 
 " Quick NERDTree call
-nnoremap <space>t :NERDTree<CR>
+"nnoremap <space>t :NERDTree<CR>
+nmap <silent> <C-e> :NERDTreeToggle<CR>
 
 " Quick Unite call 
 nnoremap <silent> <space>ff :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
@@ -72,20 +73,13 @@ set listchars=tab:»-
 set t_Co=256
 
 " indentline color setting
+set laststatus=2
 let g:indentLine_color_term=238 
-"let g:indentLine_color_gui = '#708090'
+let g:indentLine_color_gui = '#708090'
 
 " quickrun
 let g:quickrun_config = {}
 let g:quickrun_config['*'] = {'outputter/buffer/split': ':150vs'}
 nmap <space>r <Plug>(quickrun)
-
-
-" lightline
-if filereadable(expand('$HOME/junk/dotfiles/.vimrc.lightline'))
-    set laststatus=2 
-    source $HOME/junk/dotfiles/.vimrc.lightline
-endif
-
 
 colorscheme jellybeans
