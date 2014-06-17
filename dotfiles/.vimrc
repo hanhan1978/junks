@@ -41,7 +41,6 @@ nnoremap <space>s. :<C-u>source $MYVIMRC<CR>
 nmap <silent> <C-e> :NERDTreeToggle<CR>
 
 " Quick Unite call 
-nnoremap <silent> <space>ff :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 nnoremap <silent> <space>fm :<C-u>Unite file_mru<CR>
 nnoremap <silent> <space>fr :<C-u>Unite register<CR>
 nnoremap <silent> <space>fs :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
