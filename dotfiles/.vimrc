@@ -17,6 +17,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " My Bundles
 NeoBundle 'Shougo/vimproc'
 NeoBundle 'scrooloose/nerdtree' 
+NeoBundle 'scrooloose/syntastic'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler'
 NeoBundle 'Shougo/neomru.vim'
@@ -24,7 +25,6 @@ NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'w0ng/vim-hybrid'
-NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'tpope/vim-fugitive'
 
 call neobundle#end()
@@ -72,10 +72,8 @@ set list
 set listchars=tab:»-
 set t_Co=256
 
-" indentline color setting
-set laststatus=2
-let g:indentLine_color_term=238 
-let g:indentLine_color_gui = '#708090'
+" syntastic
+let g:syntastic_php_phpcs_args = "--severity=0"
 
 " quickrun
 let g:quickrun_config = {}
