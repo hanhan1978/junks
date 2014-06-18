@@ -24,7 +24,6 @@ NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'nanotech/jellybeans.vim'
-NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'tpope/vim-fugitive'
 
 call neobundle#end()
@@ -74,6 +73,9 @@ set t_Co=256
 
 " syntastic
 let g:syntastic_php_phpcs_args = "--severity=0"
+
+" indentline color setting
+let g:indentLine_color_term=238 
 
 " quickrun
 let g:quickrun_config = {}
