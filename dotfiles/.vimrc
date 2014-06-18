@@ -63,10 +63,9 @@ set shiftwidth=4
 set expandtab
 set number
 set autoindent
-"set fileencodings=iso-2022-jp,utf-8,cp932
+set fileencodings=iso-2022-jp,utf-8,cp932
 set smartcase 
 set viminfo+=n$HOME/.vim/viminfo
-set tags=.tags
 set list
 set listchars=tab:»-
 set t_Co=256
