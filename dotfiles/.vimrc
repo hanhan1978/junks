@@ -17,6 +17,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " My Bundles
 NeoBundle 'Shougo/vimproc'
 NeoBundle 'scrooloose/nerdtree' 
+NeoBundle 'scrooloose/syntastic'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler'
 NeoBundle 'Shougo/neomru.vim'
@@ -61,13 +62,15 @@ set shiftwidth=4
 set expandtab
 set number
 set autoindent
-"set fileencodings=iso-2022-jp,utf-8,cp932
+set fileencodings=iso-2022-jp,utf-8,cp932
 set smartcase 
 set viminfo+=n$HOME/.vim/viminfo
-set tags=.tags
 set list
 set listchars=tab:»-
 set t_Co=256
+
+" syntastic
+let g:syntastic_php_phpcs_args = "--severity=0"
 
 " indentline color setting
 let g:indentLine_color_term=238 
