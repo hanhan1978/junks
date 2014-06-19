@@ -17,7 +17,6 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " My Bundles
 NeoBundle 'Shougo/vimproc'
 NeoBundle 'scrooloose/nerdtree' 
-NeoBundle 'scrooloose/syntastic'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler'
 NeoBundle 'Shougo/neomru.vim'
@@ -25,6 +24,7 @@ NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'thinca/vim-quickrun'
 
 call neobundle#end()
 
@@ -69,15 +69,27 @@ set list
 set listchars=tab:»-
 set t_Co=256
 
-" syntastic
-let g:syntastic_php_phpcs_args = "--severity=0"
 
 " indentline color setting
 let g:indentLine_color_term=238 
 
 " quickrun
+augroup QuickRunPHPUnit
+    autocmd!
+    autocmd BufWinEnter,BufNewFile *Test.php set filetype=phpunit
+augroup END
+
 let g:quickrun_config = {}
-let g:quickrun_config['*'] = {'outputter/buffer/split': ':150vs'}
+let g:quickrun_config['_'] = {}
+let g:quickrun_config['_']['runner'] = 'vimproc'
+let g:quickrun_config['_']['runner/vimproc/updatetime'] = 100
+let g:quickrun_config["_"]["outputter/buffer/into"] = 1
+
+let g:quickrun_config['phpunit'] = {}
+let g:quickrun_config['phpunit']['outputter/buffer/split'] = 'vertical 35'
+let g:quickrun_config['phpunit']['command'] = 'phpunit'
+let g:quickrun_config['phpunit']['cmdopt'] = ''
+let g:quickrun_config['phpunit']['exec'] = '%c %o %s'
 nmap <space>r <Plug>(quickrun)
 
 colorscheme jellybeans
