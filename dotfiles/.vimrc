@@ -79,6 +79,12 @@ augroup QuickRunPHPUnit
     autocmd BufWinEnter,BufNewFile *Test.php set filetype=phpunit
 augroup END
 
+augroup QuickRunRSpec
+    autocmd!
+    autocmd BufWinEnter,BufNewFile *spec.rb set filetype=rspec
+augroup END
+
+
 let g:quickrun_config = {}
 let g:quickrun_config['_'] = {}
 let g:quickrun_config['_']['runner'] = 'vimproc'
@@ -90,6 +96,14 @@ let g:quickrun_config['phpunit']['outputter/buffer/split'] = 'vertical 60'
 let g:quickrun_config['phpunit']['command'] = 'phpunit'
 let g:quickrun_config['phpunit']['cmdopt'] = ''
 let g:quickrun_config['phpunit']['exec'] = '%c %o %s'
+
+
+let g:quickrun_config['rspec'] = {}
+let g:quickrun_config['rspec']['command'] = 'rspec' 
+let g:quickrun_config['rspec']['cmdopt'] = 'bundle exec' 
+let g:quickrun_config['rspec']['exec'] = '%o %c %s'
+
+
 nmap <space>r <Plug>(quickrun)
 
 colorscheme jellybeans
