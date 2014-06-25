@@ -89,11 +89,11 @@ let g:quickrun_config = {}
 let g:quickrun_config['_'] = {}
 let g:quickrun_config['_']['runner'] = 'vimproc'
 let g:quickrun_config['_']['runner/vimproc/updatetime'] = 100
-let g:quickrun_config["_"]["outputter/buffer/into"] = 1
+let g:quickrun_config['_']['outputter/buffer/split'] = 'vertical 80'
+"let g:quickrun_config["_"]["outputter/buffer/into"] = 1
 
 let g:quickrun_config['phpunit'] = {}
-let g:quickrun_config['phpunit']['outputter/buffer/split'] = 'vertical 60'
-let g:quickrun_config['phpunit']['command'] = 'phpunit'
+let g:quickrun_config['phpunit']['command'] = 'vendor/bin/phpunit'
 let g:quickrun_config['phpunit']['cmdopt'] = ''
 let g:quickrun_config['phpunit']['exec'] = '%c %o %s'
 
