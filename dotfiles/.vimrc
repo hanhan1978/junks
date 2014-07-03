@@ -23,7 +23,8 @@ NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'nanotech/jellybeans.vim'
-NeoBundle 'w0ng/vim-hybrid'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'thinca/vim-quickrun'
 
 call neobundle#end()
 
@@ -33,14 +34,14 @@ NeoBundleCheck
 
 
 " Quick vimrc edit 
-nnoremap <space>. :<C-u>tabnew $MYVIMRC<CR>
+nnoremap <space>. :<C-u>e $MYVIMRC<CR>
 nnoremap <space>s. :<C-u>source $MYVIMRC<CR>
 
 " Quick NERDTree call
-nnoremap <space>t :NERDTree<CR>
+"nnoremap <space>t :NERDTree<CR>
+nmap <silent> <C-e> :NERDTreeToggle<CR>
 
 " Quick Unite call 
-nnoremap <silent> <space>ff :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 nnoremap <silent> <space>fm :<C-u>Unite file_mru<CR>
 nnoremap <silent> <space>fr :<C-u>Unite register<CR>
 nnoremap <silent> <space>fs :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
@@ -61,21 +62,48 @@ set shiftwidth=4
 set expandtab
 set number
 set autoindent
-"set fileencodings=iso-2022-jp,utf-8,cp932
+set fileencodings=iso-2022-jp,utf-8,cp932
 set smartcase 
 set viminfo+=n$HOME/.vim/viminfo
-set tags=.tags
 set list
 set listchars=tab:»-
 set t_Co=256
 
+
 " indentline color setting
 let g:indentLine_color_term=238 
-"let g:indentLine_color_gui = '#708090'
 
 " quickrun
+augroup QuickRunPHPUnit
+    autocmd!
+    autocmd BufWinEnter,BufNewFile *Test.php set filetype=phpunit
+augroup END
+
+augroup QuickRunRSpec
+    autocmd!
+    autocmd BufWinEnter,BufNewFile *spec.rb set filetype=rspec
+augroup END
+
+
 let g:quickrun_config = {}
-let g:quickrun_config['*'] = {'outputter/buffer/split': ':150vs'}
+let g:quickrun_config['_'] = {}
+let g:quickrun_config['_']['runner'] = 'vimproc'
+let g:quickrun_config['_']['runner/vimproc/updatetime'] = 100
+let g:quickrun_config['_']['outputter/buffer/split'] = 'vertical 80'
+"let g:quickrun_config["_"]["outputter/buffer/into"] = 1
+
+let g:quickrun_config['phpunit'] = {}
+let g:quickrun_config['phpunit']['command'] = 'vendor/bin/phpunit'
+let g:quickrun_config['phpunit']['cmdopt'] = ''
+let g:quickrun_config['phpunit']['exec'] = '%c %o %s'
+
+
+let g:quickrun_config['rspec'] = {}
+let g:quickrun_config['rspec']['command'] = 'rspec' 
+let g:quickrun_config['rspec']['cmdopt'] = 'bundle exec' 
+let g:quickrun_config['rspec']['exec'] = '%o %c %s'
+
+
 nmap <space>r <Plug>(quickrun)
 
 colorscheme jellybeans

@@ -15,16 +15,15 @@ exec($cmd, $res);
 if(empty($res)) exit;
 
 foreach($res as $li){
-    if(preg_match('/^\++/', $li)){
-        $line = "\033[0;33m".$li."\033[0;39m";
-    }else if(preg_match('/^\-+/', $li)){
-        $line = "\033[0;36m".$li."\033[0;39m";
-    }else if(preg_match('/^@+/', $li)){
-        $line = "\033[1;35m".$li."\033[0;39m";
-    }else if(preg_match('/^\\\\\s/', $li)){
+    $line = mb_convert_encoding($li, TO_ENC, FROM_ENC); 
+    if(preg_match('/^\++/', $line)){
+        $line = "\033[0;33m".$line."\033[0;39m";
+    }else if(preg_match('/^\-+/', $line)){
+        $line = "\033[0;36m".$line."\033[0;39m";
+    }else if(preg_match('/^@+/', $line)){
+        $line = "\033[1;35m".$line."\033[0;39m";
+    }else if(preg_match('/^\\\\\s/', $line)){
         $line = $li;
-    }else{
-        $line = mb_convert_encoding($li, TO_ENC, FROM_ENC); 
     }
     echo "$line\n";
 }
