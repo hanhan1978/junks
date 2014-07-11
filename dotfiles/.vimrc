@@ -69,6 +69,11 @@ set list
 set listchars=tab:»-
 set t_Co=256
 
+set foldmethod=syntax
+set foldlevel=1
+set foldnestmax=2
+"let php_folding=1
+
 
 " indentline color setting
 let g:indentLine_color_term=238 
