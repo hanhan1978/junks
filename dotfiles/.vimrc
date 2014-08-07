@@ -62,7 +62,7 @@ set shiftwidth=4
 set expandtab
 set number
 set autoindent
-set fileencodings=iso-2022-jp,utf-8,cp932
+set fileencodings=utf-8,cp932,iso-2022-jp
 set smartcase 
 set viminfo+=n$HOME/.vim/viminfo
 set list
