@@ -74,6 +74,8 @@ set foldlevel=1
 set foldnestmax=2
 "let php_folding=1
 
+set viminfo='100,<250,s10,h,n$HOME/.vim/viminfo
+
 
 " indentline color setting
 let g:indentLine_color_term=238 
