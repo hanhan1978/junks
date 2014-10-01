@@ -25,6 +25,7 @@ NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'wting/rust.vim' 
 
 call neobundle#end()
 
@@ -38,8 +39,7 @@ nnoremap <space>. :<C-u>e $MYVIMRC<CR>
 nnoremap <space>s. :<C-u>source $MYVIMRC<CR>
 
 " Quick NERDTree call
-"nnoremap <space>t :NERDTree<CR>
-nmap <silent> <C-e> :NERDTreeToggle<CR>
+nnoremap <space>e :NERDTreeToggle<CR>
 
 " Quick Unite call 
 nnoremap <silent> <space>fm :<C-u>Unite file_mru<CR>
@@ -55,7 +55,7 @@ if executable('ag')
 endif
         
 syntax on
-set hlsearch
+set nohlsearch
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 set tabstop=4
 set shiftwidth=4
