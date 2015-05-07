@@ -7,6 +7,8 @@ if has('vim_starting')
    set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
+set tags=./tags
+
 " Required:
 call neobundle#begin(expand('~/.vim/bundle/'))
 
@@ -25,14 +27,24 @@ NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'wting/rust.vim' 
+NeoBundle 'TwitVim' 
+NeoBundle "vim-scripts/VimRepress"
+"NeoBundle 'mattn/webapi-vim'
+"NeoBundle 'hanhan1978/owl.vim'
 
 call neobundle#end()
+
 
 " Required:
 filetype plugin indent on
 NeoBundleCheck
 
+
+"filetype plugin on
+" omni completion
+set omnifunc=syntaxcomplete#Complete
+imap FF <C-x><C-o>
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 
 " Quick vimrc edit 
 nnoremap <space>. :<C-u>e $MYVIMRC<CR>
@@ -69,9 +81,9 @@ set list
 set listchars=tab:»-
 set t_Co=256
 
-set foldmethod=syntax
-set foldlevel=1
-set foldnestmax=2
+"set foldmethod=syntax
+"set foldlevel=1
+"set foldnestmax=2
 "let php_folding=1
 
 set viminfo='100,<250,s10,h,n$HOME/.vim/viminfo
@@ -110,7 +122,12 @@ let g:quickrun_config['rspec']['command'] = 'rspec'
 let g:quickrun_config['rspec']['cmdopt'] = 'bundle exec' 
 let g:quickrun_config['rspec']['exec'] = '%o %c %s'
 
+let g:quickrun_config['make'] = {}
+let g:quickrun_config['make']['command'] = '/usr/bin/make'
+let g:quickrun_config['make']['exec'] = "%c %o"
+let g:quickrun_config['make']['outputter'] = "error:buffer:quickfix" 
 
 nmap <space>r <Plug>(quickrun)
+nnoremap <silent> <space>m :<C-u>QuickRun make<CR>
 
 colorscheme jellybeans
