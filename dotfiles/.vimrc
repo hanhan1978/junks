@@ -80,6 +80,7 @@ set viminfo+=n$HOME/.vim/viminfo
 set list
 set listchars=tab:»-
 set t_Co=256
+set binary noeol
 
 "set foldmethod=syntax
 "set foldlevel=1
