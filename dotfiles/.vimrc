@@ -69,18 +69,25 @@ endif
 syntax on
 set nohlsearch
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
+
+" set binary, before expandtab
+set binary noeol
+
+" tab setting
 set tabstop=4
 set shiftwidth=4
 set expandtab
-set number
 set autoindent
+set softtabstop=0
+
+
+set number
 set fileencodings=utf-8,cp932,iso-2022-jp
 set smartcase 
 set viminfo+=n$HOME/.vim/viminfo
 set list
 set listchars=tab:»-
 set t_Co=256
-set binary noeol
 
 "set foldmethod=syntax
 "set foldlevel=1
