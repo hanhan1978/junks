@@ -74,8 +74,8 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 set binary noeol
 
 " tab setting
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 set autoindent
 set softtabstop=0
