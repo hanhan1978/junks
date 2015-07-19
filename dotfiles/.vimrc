@@ -29,8 +29,6 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'TwitVim' 
 NeoBundle "vim-scripts/VimRepress"
-"NeoBundle 'mattn/webapi-vim'
-"NeoBundle 'hanhan1978/owl.vim'
 
 call neobundle#end()
 
