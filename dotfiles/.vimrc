@@ -7,7 +7,6 @@ if has('vim_starting')
    set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
-set tags=./tags
 
 " Required:
 call neobundle#begin(expand('~/.vim/bundle/'))
@@ -29,6 +28,8 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'TwitVim' 
 NeoBundle "vim-scripts/VimRepress"
+NeoBundle 'taglist.vim'
+NeoBundle 'szw/vim-tags'
 
 call neobundle#end()
 
@@ -50,6 +51,15 @@ nnoremap <space>s. :<C-u>source $MYVIMRC<CR>
 
 " Quick NERDTree call
 nnoremap <space>e :NERDTreeToggle<CR>
+
+" Tlist setting
+set tags=.git/tags
+"let Tlist_Ctags_Cmd = '/bin/ctags'
+let Tlist_Show_One_File = 1
+let Tlist_Use_Right_Window = 1
+let Tlist_Exit_OnlyWindow = 1
+let Tlist_WinWidth = 40
+nnoremap <space>f :TlistToggle<CR>
 
 " Quick Unite call 
 nnoremap <silent> <space>fm :<C-u>Unite file_mru<CR>
