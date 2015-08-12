@@ -30,6 +30,7 @@ NeoBundle 'TwitVim'
 NeoBundle "vim-scripts/VimRepress"
 NeoBundle 'taglist.vim'
 NeoBundle 'szw/vim-tags'
+NeoBundle 'kchmck/vim-coffee-script'
 
 call neobundle#end()
 
@@ -42,7 +43,6 @@ NeoBundleCheck
 "filetype plugin on
 " omni completion
 set omnifunc=syntaxcomplete#Complete
-imap FF <C-x><C-o>
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 
 " Quick vimrc edit 
