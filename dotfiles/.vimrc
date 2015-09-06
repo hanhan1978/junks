@@ -31,6 +31,7 @@ NeoBundle "vim-scripts/VimRepress"
 NeoBundle 'taglist.vim'
 NeoBundle 'szw/vim-tags'
 NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'digitaltoad/vim-jade'
 
 call neobundle#end()
 
