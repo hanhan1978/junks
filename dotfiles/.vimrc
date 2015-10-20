@@ -17,19 +17,14 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " My Bundles
 NeoBundle 'Shougo/vimproc'
-NeoBundle 'scrooloose/nerdtree' 
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler'
 NeoBundle 'Shougo/neomru.vim'
-NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'TwitVim' 
 NeoBundle "vim-scripts/VimRepress"
-NeoBundle 'taglist.vim'
-NeoBundle 'szw/vim-tags'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'digitaltoad/vim-jade'
 
@@ -41,32 +36,27 @@ filetype plugin indent on
 NeoBundleCheck
 
 
-"filetype plugin on
-" omni completion
+" enable omni completion
 set omnifunc=syntaxcomplete#Complete
-autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 
 " Quick vimrc edit 
 nnoremap <space>. :<C-u>e $MYVIMRC<CR>
 nnoremap <space>s. :<C-u>source $MYVIMRC<CR>
 
-" Quick NERDTree call
-nnoremap <space>e :NERDTreeToggle<CR>
 
-" Tlist setting
-set tags=.git/tags
-"let Tlist_Ctags_Cmd = '/bin/ctags'
-let Tlist_Show_One_File = 1
-let Tlist_Use_Right_Window = 1
-let Tlist_Exit_OnlyWindow = 1
-let Tlist_WinWidth = 40
-nnoremap <space>f :TlistToggle<CR>
-
-" Quick Unite call 
+" Unite setting 
 nnoremap <silent> <space>fm :<C-u>Unite file_mru<CR>
 nnoremap <silent> <space>fr :<C-u>Unite register<CR>
 nnoremap <silent> <space>fs :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
 nnoremap <silent> <space>ss :<C-u>UniteResume search-buffer<CR>
+" Use vimfiler instead of default filer.
+let g:vimfiler_as_default_explorer = 1
+" Open filer
+noremap <silent> :tree :VimFiler -split -simple -winwidth=45 -no-quit
+noremap <space>e :VimFiler -split -simple -winwidth=45 -no-quit<ENTER>
+" Don't let <CR> enter the directory but let it open the directory
+autocmd FileType vimfiler nmap <buffer> <CR> <Plug>(vimfiler_expand_or_edit)
+
 
 " Unite grep with ag 
 if executable('ag')
@@ -104,10 +94,6 @@ set t_Co=256
 "let php_folding=1
 
 set viminfo='100,<250,s10,h,n$HOME/.vim/viminfo
-
-
-" indentline color setting
-let g:indentLine_color_term=238 
 
 " quickrun
 augroup QuickRunPHPUnit
