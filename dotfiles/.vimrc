@@ -21,7 +21,7 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler'
 NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'ujihisa/unite-colorscheme'
-NeoBundle 'nanotech/jellybeans.vim'
+NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle "vim-scripts/VimRepress"
@@ -93,7 +93,8 @@ set t_Co=256
 "set foldnestmax=2
 "let php_folding=1
 
-set viminfo='100,<250,s10,h,n$HOME/.vim/viminfo
+set viminfo='20,\"1000
+
 
 " quickrun
 augroup QuickRunPHPUnit
@@ -133,4 +134,5 @@ let g:quickrun_config['make']['outputter'] = "error:buffer:quickfix"
 nmap <space>r <Plug>(quickrun)
 nnoremap <silent> <space>m :<C-u>QuickRun make<CR>
 
-colorscheme jellybeans
+colorscheme solarized
+set background=dark
