@@ -24,9 +24,9 @@ NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'thinca/vim-quickrun'
-NeoBundle "vim-scripts/VimRepress"
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'digitaltoad/vim-jade'
+NeoBundle 'wakatime/vim-wakatime'
 
 call neobundle#end()
 
