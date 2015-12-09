@@ -27,6 +27,7 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'wakatime/vim-wakatime'
+NeoBundle 'wavded/vim-stylus'
 
 call neobundle#end()
 
