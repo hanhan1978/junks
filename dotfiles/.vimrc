@@ -134,5 +134,6 @@ let g:quickrun_config['make']['outputter'] = "error:buffer:quickfix"
 nmap <space>r <Plug>(quickrun)
 nnoremap <silent> <space>m :<C-u>QuickRun make<CR>
 
-colorscheme solarized
 set background=dark
+let g:solarized_termtrans = 1
+colorscheme solarized
