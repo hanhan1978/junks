@@ -47,6 +47,8 @@ nnoremap <space>s. :<C-u>source $MYVIMRC<CR>
 
 
 " Unite setting 
+nmap <space>u [unite]
+nnoremap <silent> [unite]b :<C-u>Unite bookmark -vertical -winwidth=45<CR>
 nnoremap <silent> <space>fm :<C-u>Unite file_mru<CR>
 nnoremap <silent> <space>fr :<C-u>Unite register<CR>
 nnoremap <silent> <space>fs :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
