@@ -28,6 +28,7 @@ NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'wakatime/vim-wakatime'
 NeoBundle 'wavded/vim-stylus'
+NeoBundle 'https://github.com/gorodinskiy/vim-coloresque.git'
 
 call neobundle#end()
 
@@ -74,12 +75,12 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 set binary noeol
 
 " tab setting
-set tabstop=2
+set expandtab "use consective space as tab"
+set tabstop=2 "width of displayed tab
 set shiftwidth=2
-set expandtab
 set autoindent
 set softtabstop=0
-
+set nf=""    "treat 0 padded number as decimal number
 
 set number
 set fileencodings=utf-8,cp932,iso-2022-jp
