@@ -29,6 +29,7 @@ NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'wakatime/vim-wakatime'
 NeoBundle 'wavded/vim-stylus'
 NeoBundle 'https://github.com/gorodinskiy/vim-coloresque.git'
+NeoBundle 'vim-scripts/diffchar.vim'
 
 call neobundle#end()
 
@@ -48,11 +49,11 @@ nnoremap <space>s. :<C-u>source $MYVIMRC<CR>
 
 " Unite setting 
 nmap <space>u [unite]
-nnoremap <silent> [unite]b :<C-u>Unite bookmark -vertical -winwidth=45<CR>
-nnoremap <silent> <space>fm :<C-u>Unite file_mru<CR>
-nnoremap <silent> <space>fr :<C-u>Unite register<CR>
-nnoremap <silent> <space>fs :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
-nnoremap <silent> <space>ss :<C-u>UniteResume search-buffer<CR>
+nnoremap <silent> [unite]b  :<C-u>Unite bookmark -vertical -winwidth=45<CR>
+nnoremap <silent> [unite]fs :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
+nnoremap <silent> [unite]ss :<C-u>UniteResume search-buffer<CR>
+nnoremap <silent> [unite]fm :<C-u>Unite file_mru<CR>
+nnoremap <silent> [unite]fr :<C-u>Unite register<CR>
 " Use vimfiler instead of default filer.
 let g:vimfiler_as_default_explorer = 1
 " Open filer
@@ -68,6 +69,8 @@ if executable('ag')
    let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
    let g:unite_source_grep_recursive_opt = ''
 endif
+
+nmap <space>gs :Gstatus<CR><C-w>10+
         
 syntax on
 set nohlsearch
@@ -141,3 +144,17 @@ nnoremap <silent> <space>m :<C-u>QuickRun make<CR>
 set background=dark
 let g:solarized_termtrans = 1
 colorscheme solarized
+
+highlight DiffAdd    cterm=bold ctermfg=15 ctermbg=22
+highlight DiffDelete cterm=bold ctermfg=10 ctermbg=52
+highlight DiffChange cterm=bold ctermfg=10 ctermbg=18
+highlight DiffText   cterm=bold ctermfg=15 ctermbg=27
+
+if &diff
+  augroup enable_diffchar
+    autocmd!
+    autocmd VimEnter * execute "%SDChar"
+  augroup END
+endif
+
+let g:DiffModeSync = 0
