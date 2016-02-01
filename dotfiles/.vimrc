@@ -30,6 +30,7 @@ NeoBundle 'wakatime/vim-wakatime'
 NeoBundle 'wavded/vim-stylus'
 NeoBundle 'https://github.com/gorodinskiy/vim-coloresque.git'
 NeoBundle 'vim-scripts/diffchar.vim'
+NeoBundle 'Yggdroot/indentLine' 
 
 call neobundle#end()
 
@@ -48,7 +49,7 @@ nnoremap <space>s. :<C-u>source $MYVIMRC<CR>
 
 
 " Unite setting 
-nmap <space>u [unite]
+nmap <space> [unite]
 nnoremap <silent> [unite]b  :<C-u>Unite bookmark -vertical -winwidth=45<CR>
 nnoremap <silent> [unite]fs :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
 nnoremap <silent> [unite]ss :<C-u>UniteResume search-buffer<CR>
@@ -158,3 +159,8 @@ if &diff
 endif
 
 let g:DiffModeSync = 0
+
+" indentLine
+let g:indentLine_color_term = 236
+let g:indentLine_color_gui = '#708090'
+let g:indentLine_char = '¦'
