@@ -31,6 +31,7 @@ NeoBundle 'wavded/vim-stylus'
 NeoBundle 'https://github.com/gorodinskiy/vim-coloresque.git'
 NeoBundle 'vim-scripts/diffchar.vim'
 NeoBundle 'Yggdroot/indentLine' 
+NeoBundle 'editorconfig/editorconfig-vim'
 
 call neobundle#end()
 
@@ -164,3 +165,6 @@ let g:DiffModeSync = 0
 let g:indentLine_color_term = 236
 let g:indentLine_color_gui = '#708090'
 let g:indentLine_char = '¦'
+
+" editorconfig
+let g:EditorConfig_exec_path = '/usr/local/bin/editorconfig'
