@@ -32,6 +32,8 @@ NeoBundle 'https://github.com/gorodinskiy/vim-coloresque.git'
 NeoBundle 'vim-scripts/diffchar.vim'
 NeoBundle 'Yggdroot/indentLine' 
 NeoBundle 'editorconfig/editorconfig-vim'
+NeoBundle 'evidens/vim-twig'
+NeoBundle 'h1mesuke/vim-alignta'
 
 call neobundle#end()
 
