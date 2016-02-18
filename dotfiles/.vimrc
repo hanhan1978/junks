@@ -168,3 +168,6 @@ let g:indentLine_char = '¦'
 
 " editorconfig
 let g:EditorConfig_exec_path = '/usr/local/bin/editorconfig'
+
+" colorcolumn
+let &colorcolumn=join(range(81,999),",")
