@@ -24,14 +24,13 @@ NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'digitaltoad/vim-jade'
-NeoBundle 'wakatime/vim-wakatime'
 NeoBundle 'wavded/vim-stylus'
 NeoBundle 'https://github.com/gorodinskiy/vim-coloresque.git'
 NeoBundle 'vim-scripts/diffchar.vim'
 NeoBundle 'Yggdroot/indentLine' 
 NeoBundle 'editorconfig/editorconfig-vim'
+NeoBundle 'hanhan1978/playground-vim'
 
 call neobundle#end()
 
