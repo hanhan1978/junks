@@ -31,6 +31,8 @@ NeoBundle 'vim-scripts/diffchar.vim'
 NeoBundle 'Yggdroot/indentLine' 
 NeoBundle 'editorconfig/editorconfig-vim'
 NeoBundle 'hanhan1978/playground-vim'
+NeoBundle 'evidens/vim-twig'
+NeoBundle 'h1mesuke/vim-alignta'
 
 call neobundle#end()
 
