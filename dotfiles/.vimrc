@@ -25,7 +25,6 @@ NeoBundle 'digitaltoad/vim-pug'
 NeoBundle 'wavded/vim-stylus'
 NeoBundle 'https://github.com/gorodinskiy/vim-coloresque.git'
 NeoBundle 'Yggdroot/indentLine' 
-NeoBundle 'editorconfig/editorconfig-vim'
 NeoBundle 'hanhan1978/playground-vim'
 NeoBundle 'evidens/vim-twig'
 NeoBundle 'h1mesuke/vim-alignta'
@@ -109,9 +108,6 @@ highlight DiffText   cterm=bold ctermfg=15 ctermbg=27
 let g:indentLine_color_term = 236
 let g:indentLine_color_gui = '#708090'
 let g:indentLine_char = '¦'
-
-" editorconfig
-let g:EditorConfig_exec_path = '/usr/local/bin/editorconfig'
 
 " colorcolumn
 let &colorcolumn=join(range(81,999),",")
