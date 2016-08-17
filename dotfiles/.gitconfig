@@ -1,0 +1,10 @@
+[user]
+    name = hanhan1978
+    email = ryo.tomidokoro@gmail.com
+
+[alias]
+    st = status
+    sh = show
+    d1 = diff HEAD~
+    d2 = diff HEAD~~
+    lg = log --graph --date=short --pretty=format:'%Cgreen%h %cd %Cblue%cn %Creset%s'
