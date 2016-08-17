@@ -30,6 +30,7 @@ NeoBundle 'evidens/vim-twig'
 NeoBundle 'h1mesuke/vim-alignta'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'nicklasos/vim-jsx-riot'
+NeoBundle 'stephpy/vim-yaml'
 
 call neobundle#end()
 
@@ -113,7 +114,7 @@ let g:indentLine_char = '¦'
 let &colorcolumn=join(range(81,999),",")
 
 " do not set eol lf when it's not set
-set nofixeol
+"set nofixeol
 
 au BufRead,BufNewFile,BufReadPre *.jade set filetype=pug 
 au BufNewFile,BufRead *.tag setlocal ft=javascript
