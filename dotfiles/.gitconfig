@@ -1,7 +1,9 @@
 [user]
     name = hanhan1978
     email = ryo.tomidokoro@gmail.com
-
+[core]
+    editor = vim
+    excludesfile = ~/.gitignore_global
 [alias]
     st = status
     sh = show
