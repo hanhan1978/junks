@@ -7,6 +7,10 @@
 [alias]
     st = status
     sh = show
+    ba = branch -a
+    bd = branch -d
+    br = branch
     d1 = diff HEAD~
     d2 = diff HEAD~~
     lg = log --graph --date=short --pretty=format:'%Cgreen%h %cd %Cblue%cn %Creset%s'
+    pom = pull origin master
