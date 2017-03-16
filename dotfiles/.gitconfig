@@ -14,3 +14,5 @@
     d2 = diff HEAD~~
     lg = log --graph --date=short --pretty=format:'%Cgreen%h %cd %Cblue%cn %Creset%s'
     pom = pull origin master
+[commit]
+    template = ~/.gitmessage
