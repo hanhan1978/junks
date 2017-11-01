@@ -3,7 +3,7 @@
     email = ryo.tomidokoro@gmail.com
 [core]
     editor = vim
-    excludesfile = ~/.gitignore_global
+	excludesfile = /Users/hanhan/.gitignore_global
 [alias]
     st = status
     sh = show
@@ -16,3 +16,9 @@
     pom = pull origin master
 [commit]
     template = ~/.gitmessage
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
