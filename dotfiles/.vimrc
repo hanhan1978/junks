@@ -31,8 +31,10 @@ NeoBundle 'h1mesuke/vim-alignta'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'nicklasos/vim-jsx-riot'
 NeoBundle 'stephpy/vim-yaml'
+NeoBundle 'scrooloose/nerdtree'
 
 call neobundle#end()
+
 
 
 " Required:
@@ -55,6 +57,9 @@ nnoremap <silent> [unite]ss :<C-u>UniteResume search-buffer<CR>
 nnoremap <silent> [unite]fm :<C-u>Unite file_mru<CR>
 nnoremap <silent> [unite]fr :<C-u>Unite register<CR>
 
+nnoremap [unite]t :NERDTreeToggle<CR>
+nnoremap [unite]q :q<CR>
+nnoremap [unite]w :w<CR>
 
 " Unite grep with ag 
 if executable('ag')
