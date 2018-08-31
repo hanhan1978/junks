@@ -141,4 +141,9 @@ let &colorcolumn=join(range(81,999),",")
 au BufRead,BufNewFile,BufReadPre *.jade set filetype=pug 
 au BufNewFile,BufRead *.tag setlocal ft=javascript
 
+" netrtw setting
+let g:netrw_liststyle=3
+let g:netrw_altv = 1
+let g:netrw_alto = 1
+
 autocmd InsertLeave * set nopaste

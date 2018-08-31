@@ -19,3 +19,5 @@
     files = "!git diff --name-status \"$1^\" \"$1\""
 [commit]
     template = ~/.gitmessage
+[http]
+	postBuffer = 524288000
