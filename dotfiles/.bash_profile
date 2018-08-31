@@ -1,4 +1,4 @@
-alias ll='ls -lA --color'
+alias ll='ls --color -lA'
 
 export CLICOLOR=1
 export LSCOLORS=ExGxcxdxCxegedabagacad
@@ -21,3 +21,12 @@ export PS1='\[\033[34m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
 alias tmux='tmux -2'
 
 alias d='docker-compose'
+
+
+if [[ -s ~/.nvm/nvm.sh ]];
+ then source ~/.nvm/nvm.sh
+fi
+export PATH="$HOME/.phpenv/bin:$PATH"
+export PATH="$HOME/.phpenv/plugins/php-build/bin:$PATH"
+eval "$(phpenv init -)"
+
