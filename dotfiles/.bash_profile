@@ -30,3 +30,9 @@ export PATH="$HOME/.phpenv/bin:$PATH"
 export PATH="$HOME/.phpenv/plugins/php-build/bin:$PATH"
 eval "$(phpenv init -)"
 
+
+export GOPATH=$HOME/gopath
+export PATH=$GOPATH:$GOPATH/bin:$HOME/bin:$PATH
+
+alias pbcopy='xclip -selection c'
+alias pbpaste='xclip -selection c -o'

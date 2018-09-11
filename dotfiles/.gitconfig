@@ -17,6 +17,7 @@
     pom = pull origin master
     od = "!git diff \"$1^\"...\"$1\""
     files = "!git diff --name-status \"$1^\" \"$1\""
+    empty = commit --allow-empty -m 'empty commit'
 [commit]
     template = ~/.gitmessage
 [http]
