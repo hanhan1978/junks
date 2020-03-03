@@ -22,12 +22,10 @@ alias tmux='tmux -2'
 
 alias d='docker-compose'
 
-
-if [[ -s ~/.nvm/nvm.sh ]];
- then source ~/.nvm/nvm.sh
-fi
 export PATH="$HOME/.phpenv/bin:$PATH"
 export PATH="$HOME/.phpenv/plugins/php-build/bin:$PATH"
+export PATH="$PATH:/usr/lib/inkdrop/resources/app/ipm/bin"
+export PATH="$PATH:$HOME/.config/composer/vendor/bin"
 eval "$(phpenv init -)"
 
 
@@ -36,3 +34,5 @@ export PATH=$GOPATH:$GOPATH/bin:$HOME/bin:$PATH
 
 alias pbcopy='xclip -selection c'
 alias pbpaste='xclip -selection c -o'
+
+eval "$(hub alias -s)"

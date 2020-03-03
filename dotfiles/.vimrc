@@ -48,7 +48,7 @@ let g:quickrun_config._ = {
       \ }
 
 let g:quickrun_no_default_key_mappings = 1
-nnoremap [unite]r :write<CR>:QuickRun -mode n<CR>   
+nnoremap [unite]r :only<cr>:write<CR>:QuickRun -mode n<CR>   
 
 
 
@@ -130,7 +130,6 @@ highlight DiffText   cterm=bold ctermfg=15 ctermbg=27
 " indentLine
 let g:indentLine_color_term = 236
 let g:indentLine_color_gui = '#708090'
-let g:indentLine_char = '¦'
 
 " colorcolumn
 let &colorcolumn=join(range(81,999),",")

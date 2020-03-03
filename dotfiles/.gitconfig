@@ -21,4 +21,6 @@
 [commit]
     template = ~/.gitmessage
 [http]
-	postBuffer = 524288000
+    postBuffer = 524288000
+[diff "cp932"]
+    textconv = iconv -f cp932 -t utf-8
