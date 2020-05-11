@@ -1,0 +1,26 @@
+#!/bin/bash
+
+if [ -z "$1" ]
+then
+    echo "Please specify sg-group-id, port, cidr, description";
+    exit;
+else
+    SG=$1
+fi
+#[
+#  {
+#    "FromPort": integer,
+#    "IpProtocol": "string",
+#    "IpRanges": [
+#      {
+#        "CidrIp": "string",
+#        "Description": "string"
+#      }
+#    ]
+#  }
+#]
+JSON=`echo '{}' | jq ".|{FromPort: $2, IpProtocol: \"tcp\", IpRanges: [{CidrIp: \"$3\", Description: \"$4\"}]}"`
+
+aws ec2 revoke-security-group-ingress \
+  --group-id $1 \
+  --ip-permissions "[{\"IpProtocol\": \"tcp\", \"FromPort\": $2, \"ToPort\": $2, \"IpRanges\": [{\"CidrIp\": \"$3\"}]}]"

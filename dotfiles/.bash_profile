@@ -30,8 +30,12 @@ alias d='docker-compose'
 
 export PATH="$HOME/.phpenv/bin:$PATH"
 export PATH="$HOME/.phpenv/plugins/php-build/bin:$PATH"
-export PATH="$PATH:/usr/lib/inkdrop/resources/app/ipm/bin"
 export PATH="$PATH:$HOME/.config/composer/vendor/bin"
+export PATH="$PATH:$HOME/dev/hanhan/junks/tools/aws"
+export PATH="$PATH:$HOME/dev/hanhan/junks/tools/desktop"
+export PATH="$PATH:$HOME/dev/hanhan/junks/tools/diff"
+export PATH="$PATH:$HOME/dev/hanhan/junks/tools/git"
+export PATH="$PATH:$HOME/dev/hanhan/junks/tools/misc"
 eval "$(phpenv init -)"
 
 

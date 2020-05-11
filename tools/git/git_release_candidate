@@ -1,0 +1,5 @@
+#! /bin/bash
+
+git push origin `git symbolic-ref --short HEAD`
+xdg-open `hub pull-request -b master -m "PR for release candidate"`
+

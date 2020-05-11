@@ -1,0 +1,3 @@
+#!/bin/bash
+
+aws ec2 describe-instances | jq '.Reservations[].Instances[] |{instance_id: .InstanceId, name: .Tags[0].Value, sg: (.SecurityGroups | map(join(" => "))), public_ip: .NetworkInterfaces[].Association.PublicIp}'

@@ -1,0 +1,9 @@
+#!/bin/bash
+if [ -z "$1" ]
+then
+    BRIGHTNESS=0.45
+else
+    BRIGHTNESS=$1
+fi
+OUTPUT=`xrandr | grep " connected " | cut -d " " -f 1 | tail -n 1`
+xrandr --output $OUTPUT --brightness $BRIGHTNESS

@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [ -z "$1" ]
+then
+    echo "Please specify ARN, TargetId";
+    exit;
+else
+    ARN=$1
+    TARGET_ID=$2
+fi
+
+aws elbv2 deregister-targets --target-group-arn $ARN --targets Id=$TARGET_ID
