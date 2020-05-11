@@ -1,0 +1,27 @@
+#! /bin/bash
+
+if [ -z "$1" ]
+then
+    BRANCH="staging"
+else
+    BRANCH=$1
+fi
+
+TEMPLATE='./.github/PULL_REQUEST_TEMPLATE.md'
+if [ -f "$TEMPLATE" ]; then
+    TITLE="RR for Review"
+    MESSAGE=`cat $TEMPLATE`
+else
+    TITLE="PR for Review"
+    MESSAGE="## チケット or Issue
+
+## レビュー視点
+- 見てほしいところ
+- 自信のないところ
+
+## 画面キャプチャ or URL"
+fi
+
+git push origin `git symbolic-ref --short HEAD`
+xdg-open `hub pull-request -b $BRANCH -m "$TITLE" -m "$MESSAGE"`
+

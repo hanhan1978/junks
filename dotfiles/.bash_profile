@@ -3,9 +3,15 @@ alias ll='ls --color -lA'
 export CLICOLOR=1
 export LSCOLORS=ExGxcxdxCxegedabagacad
 
-HISTTIMEFORMAT='%y/%m/%d %H:%M:%S ';
-HISTSIZE=10000
-HISTIGNORE=ls:history:ll
+export PROMPT_COMMAND='history -a;history -c;history -r'
+export HISTCONTROL=ignoreboth:erasedups
+HISTTIMEFORMAT="%F %T  "
+HISTSIZE=100000
+HISTFILESIZE=100000
+HISTIGNORE='ls:history:ll:exit:export AWS*'
+shopt -s histappend
+shopt -s cmdhist
+shopt -s lithist
 
 if [ -f ~/.git-completion.bash ]; then
     source ~/.git-completion.bash
@@ -22,11 +28,27 @@ alias tmux='tmux -2'
 
 alias d='docker-compose'
 
-
-if [[ -s ~/.nvm/nvm.sh ]];
- then source ~/.nvm/nvm.sh
-fi
 export PATH="$HOME/.phpenv/bin:$PATH"
 export PATH="$HOME/.phpenv/plugins/php-build/bin:$PATH"
+export PATH="$PATH:$HOME/.config/composer/vendor/bin"
+export PATH="$PATH:$HOME/dev/hanhan/junks/tools/aws"
+export PATH="$PATH:$HOME/dev/hanhan/junks/tools/desktop"
+export PATH="$PATH:$HOME/dev/hanhan/junks/tools/diff"
+export PATH="$PATH:$HOME/dev/hanhan/junks/tools/git"
+export PATH="$PATH:$HOME/dev/hanhan/junks/tools/misc"
 eval "$(phpenv init -)"
+
+
+export GOPATH=$HOME/gopath
+export PATH=$GOPATH:$GOPATH/bin:$HOME/bin:$PATH
+export PATH=/snap/bin:$PATH
+
+alias pbcopy='xclip -selection c'
+alias pbpaste='xclip -selection c -o'
+
+eval "$(hub alias -s)"
+
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+        source /etc/profile.d/vte.sh
+fi
 

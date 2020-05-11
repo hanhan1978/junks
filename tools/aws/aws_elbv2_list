@@ -1,0 +1,13 @@
+#!/bin/bash
+
+ELB=`aws elbv2 describe-load-balancers | jq '.LoadBalancers[] | {arn: .LoadBalancerArn}'`
+
+
+for ARN in `echo $ELB | jq .arn | sed -e 's/"//g'`
+do
+    aws elbv2 describe-load-balancers --load-balancer-arns $ARN | jq '.LoadBalancers[] | {name: .LoadBalancerName, arn: .LoadBalancerArn, sg: .SecurityGroups[]}';
+    TARGET=`aws elbv2  describe-target-groups --load-balancer-arn $ARN | jq '.TargetGroups[] | {TargetGroupArn: .TargetGroupArn, Port: .Port, VpcId: .VpcId, HealthCheck: .HealthCheckPath}';`
+    echo $TARGET | jq
+    echo $TARGET | jq .TargetGroupArn | xargs -I % aws elbv2 describe-target-health --target-group-arn % | jq '.TargetHealthDescriptions[] | {TargetId: .Target.Id, TargetHealth: .TargetHealth.State}'
+    echo "---------------------------------------------------------";
+done

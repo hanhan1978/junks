@@ -43,7 +43,7 @@ let g:quickrun_config._ = {
       \ 'outputter' : 'error',
       \ 'outputter/error/success' : 'buffer',
       \ 'outputter/error/error'   : 'quickfix',
-      \ 'outputter/buffer/split'  : ':rightbelow 8sp',
+      \ 'outputter/buffer/split'  : ':rightbelow 10sp',
       \ 'outputter/buffer/close_on_empty' : 1,
       \ }
 
@@ -130,7 +130,6 @@ highlight DiffText   cterm=bold ctermfg=15 ctermbg=27
 " indentLine
 let g:indentLine_color_term = 236
 let g:indentLine_color_gui = '#708090'
-let g:indentLine_char = '¦'
 
 " colorcolumn
 let &colorcolumn=join(range(81,999),",")
