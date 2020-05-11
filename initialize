@@ -7,17 +7,17 @@ for item in $DOTFILES
 do
     if [ -d "$DOTFILE_PATH$item" ]
     then
-        echo cp -r $DOTFILE_PATH$item $HOME
+        cp -r $DOTFILE_PATH$item $HOME
     else
-        echo ln -sf $DOTFILE_PATH$item $HOME
+        ln -sf $DOTFILE_PATH$item $HOME
     fi
 done
-exit;
 
 sudo apt update
-sudo apt install hub jq wget tmux vim
+sudo apt install -y hub jq wget tmux vim
+sudo snap install hub --classic
 
 wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -O $HOME/.git-completion.bash
 wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -O $HOME/.git-prompt.sh
 
-
+sudo apt install -y fonts-roboto fonts-noto fonts-ricty-diminished
