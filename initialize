@@ -21,3 +21,11 @@ wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-com
 wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -O $HOME/.git-prompt.sh
 
 sudo apt install -y fonts-roboto fonts-noto fonts-ricty-diminished
+
+#php compilation
+sudo apt install -y libssl-dev pkg-config libxml2-dev libkrb5-dev libsqlite3-dev libbz2-dev libcurl4-nss-dev
+sudo apt install -y libpng-dev libjpeg-dev libonig-dev libreadline-dev libtidy-dev libxslt1-dev libzip-dev libffi-dev
+
+#xdebug compilation
+sudo apt install -y autoconf automake
+
