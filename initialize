@@ -14,7 +14,7 @@ do
 done
 
 sudo apt update
-sudo apt install -y hub jq wget tmux vim
+sudo apt install -y hub jq wget tmux vim xclip
 sudo snap install hub --classic
 
 wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -O $HOME/.git-completion.bash
