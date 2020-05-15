@@ -1,9 +1,14 @@
 alias ll='ls --color -lA'
 
+# load for vte gtk widget
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+    source /etc/profile.d/vte.sh
+fi
+
 export CLICOLOR=1
 export LSCOLORS=ExGxcxdxCxegedabagacad
 
-export PROMPT_COMMAND='history -a;history -c;history -r'
+export PROMPT_COMMAND="$PROMPT_COMMAND;history -a;history -c;history -r"
 export HISTCONTROL=ignoreboth:erasedups
 HISTTIMEFORMAT="%F %T  "
 HISTSIZE=100000
@@ -47,8 +52,4 @@ alias pbcopy='xclip -selection c'
 alias pbpaste='xclip -selection c -o'
 
 eval "$(hub alias -s)"
-
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-        source /etc/profile.d/vte.sh
-fi
 
