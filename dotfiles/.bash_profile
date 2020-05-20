@@ -54,8 +54,10 @@ alias pbpaste='xclip -selection c -o'
 
 eval "$(hub alias -s)"
 
+_exec_hstr(){
+    hstr --
+}
+
 # if this is interactive shell, then bind hstr to Ctrl-r (for Vi mode check doc)
-if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hstr -- \C-j"'; fi
-# if this is interactive shell, then bind 'kill last command' to Ctrl-x k
-if [[ $- =~ .*i.* ]]; then bind '"\C-xk": "\C-a hstr -k \C-j"'; fi
+if [[ $- =~ .*i.* ]]; then bind -x '"\C-r":  _exec_hstr'; fi
 export HSTR_CONFIG=hicolor
