@@ -34,6 +34,7 @@ alias tmux='tmux -2'
 alias d='docker-compose'
 
 export PATH="$HOME/.phpenv/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.phpenv/plugins/php-build/bin:$PATH"
 export PATH="$PATH:$HOME/.config/composer/vendor/bin"
 export PATH="$PATH:$HOME/dev/hanhan/junks/tools/aws"
@@ -53,3 +54,8 @@ alias pbpaste='xclip -selection c -o'
 
 eval "$(hub alias -s)"
 
+# if this is interactive shell, then bind hstr to Ctrl-r (for Vi mode check doc)
+if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hstr -- \C-j"'; fi
+# if this is interactive shell, then bind 'kill last command' to Ctrl-x k
+if [[ $- =~ .*i.* ]]; then bind '"\C-xk": "\C-a hstr -k \C-j"'; fi
+export HSTR_CONFIG=hicolor

@@ -29,3 +29,5 @@ sudo apt install -y libpng-dev libjpeg-dev libonig-dev libreadline-dev libtidy-d
 #xdebug compilation
 sudo apt install -y autoconf automake
 
+#hstr installation
+sudo add-apt-repository ppa:ultradvorka/ppa && sudo apt update && sudo apt install -y hstr
