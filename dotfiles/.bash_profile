@@ -8,7 +8,8 @@ fi
 export CLICOLOR=1
 export LSCOLORS=ExGxcxdxCxegedabagacad
 
-export PROMPT_COMMAND="$PROMPT_COMMAND;history -a;history -c;history -r"
+export PROMPT_COMMAND="history -a;history -c;history -r; ${PROMPT_COMMAND}"
+
 export HISTCONTROL=ignoreboth:erasedups
 HISTTIMEFORMAT="%F %T  "
 HISTSIZE=100000
