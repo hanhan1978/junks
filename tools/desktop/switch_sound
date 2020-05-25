@@ -8,13 +8,7 @@ done
 
 outputId=`echo $opt | cut -d":" -f 1`
 
-echo $outputId;
-
-
 inputs=`pactl list short sink-inputs | cut -f 1`
-
-echo $inputs
-
 
 pacmd set-default-sink $outputId;
 
