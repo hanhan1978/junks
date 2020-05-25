@@ -1,0 +1,24 @@
+#!/bin/bash
+options=(`pactl list short sinks | cut -f 1,2 | sed -s 's/\t/:/g'`);
+echo $options
+select opt in "${options[@]}";
+do
+    break;
+done
+
+outputId=`echo $opt | cut -d":" -f 1`
+
+echo $outputId;
+
+
+inputs=`pactl list short sink-inputs | cut -f 1`
+
+echo $inputs
+
+
+pacmd set-default-sink $outputId;
+
+for input in $inputs
+do
+    pacmd move-sink-input $input $outputId;
+done
