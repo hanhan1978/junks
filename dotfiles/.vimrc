@@ -1,4 +1,5 @@
 "mkdir -p ~/.vim/bundle
+"mkdir -p ~/.vim/undo
 "git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 
 if has('vim_starting')
@@ -112,11 +113,11 @@ set fileencodings=utf-8,cp932,iso-2022-jp
 
 set ignorecase
 set smartcase 
-set viminfo+=n$HOME/.vim/viminfo
 set list
 set listchars=tab:»-
 set t_Co=256
 set viminfo='20,\"1000
+set viminfo+=n$HOME/.vim/viminfo
 
 set background=dark
 let g:solarized_termtrans = 1
